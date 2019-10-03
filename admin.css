@@ -1,0 +1,25 @@
+/*************************************************
+ * INDEX
+ * ************************************************/
+/*
+ * 0 - Typography
+ * 1 - Parent template adjustment
+ * 2 - Custom content CSS
+ * 3 - Home page footer
+ * 4 - Plugin adjustment
+ * 
+ */
+
+/*************************************************
+ * 0 - Typography
+ * ************************************************/
+
+/* Academic Icons */
+.fa-dblp:before {
+    content: "\e94f";
+	font-family: 'Academicons';
+}
+.fa-google-scholar:before {
+    content: "\e9d4";
+	font-family: 'Academicons';
+}

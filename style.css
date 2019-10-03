@@ -1,0 +1,280 @@
+/*
+Theme Name: ReTiS WP Template
+Author: Gabriele Serra
+Description: A simple child theme for Elead
+Version: 0.0.1
+Template: elead
+Text Domain: retis-template
+*/ 
+
+/*************************************************
+ * INDEX
+ * ************************************************/
+/*
+ * 0 - Typography
+ * 1 - Parent template adjustment
+ * 2 - Custom content CSS
+ * 3 - Home page footer
+ * 4 - Plugin adjustment
+ * 
+ */
+
+/*************************************************
+ * 0 - Typography
+ * ************************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: 'Roboto', sans-serif;
+}
+.main-navigation  ul li a {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Academic Icons */
+.fa-dblp:before {
+    content: "\e94f";
+	font-family: 'Academicons';
+}
+.fa-google-scholar:before {
+    content: "\e9d4";
+	font-family: 'Academicons';
+}
+
+/* Original theme colors */
+:root {
+  	--primary: #c1331b;
+	--secondary: #f9d1a1;
+	--primarydarker: #8f2817;
+	--transparent: #2e2624;
+}
+
+/* ReTis palette */
+/*
+:root {
+  	--primary: #3F51B5;
+	--secondary: #FFFFFF;
+	--primarydarker: #303F9F;
+	--transparent: #212121;
+}
+*/
+
+.main-navigation {
+	background-color: var(--primary);
+}
+.main-navigation ul li a {
+	color: var(--secondary);
+}
+.main-navigation li:hover {
+	background-color: var(--primarydarker);
+}
+h2.news-ticker-label {
+	background-color: var(--primary);
+}
+.top-bar {
+    border-bottom-color: var(--primary);
+}
+.main-slider-contents {
+	border-left-color: var(--primary);
+}
+.btn-fill {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.btn {
+	color: var(--secondary);
+}
+#courses-details .entry-meta small .name, #primary span.cat-links a, #professional .entry-title-desc, #promotion .entry-title-desc, #testominal .entry-title-desc, .course-features li i, .entry-title-desc, .page-header h3, .page-numbers:before, .picker_close, .picker_close:focus, .picker_close:hover, .price, .quatation span, .read-more, .read-more:after, .service i, .site-description, .site-info a, .statwrap .fa, .statwrap small, .subscribe-text p, .thumb-image span, .widget_latest_courses span.tp-course-price, ul.trail-items li {
+	color: var(--primary) !important;
+}
+.featured-title a:hover, .news-content .entry-title a:hover, .entry-meta time:hover, #secondary .widget h5 a:hover, #secondary .widget ul li a.time:hover, .thumb-image h5 a:hover, .footer-widget-area a:hover, .footer-widget-area .widget_call_to_action ul li a:hover, .site-title a:hover, .sticky .entry-title a:hover, #primary .sticky span.comments-link a:hover, #primary .archive-blog-wrapper .entry-container .entry-title a:hover, #primary .archive-blog-wrapper .entry-meta a:hover, .single-post span.posted-on time:hover, .single-post span.comments-link a:hover, span.orange, #core-services .featured-image h5 a:hover, .post-navigation .nav-links a:hover, .posts-navigation .nav-links a:hover, #about-author .author-name a:hover, .news.and.events #secondary .widget a:hover, #news-events .events h5 a:hover, #news-events .events ul li a.time:hover, .single-post .entry-container .entry-meta a:hover, .single-tp-class .entry-meta a:hover, .single-tp-event .entry-meta a:hover, .single-tp-excursion .entry-meta a:hover, .single-tp-affiliation .entry-meta a:hover {
+	color: var(--primary) !important;
+}
+.btn-transparent, #promotion .btn.btn-fill:hover {
+    border-color: var(--transparent);
+    color: var(--transparent);
+}
+.btn-transparent:hover, .btn-fill:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+/*************************************************
+ * 1 - Parent template adjustment
+ * ************************************************/
+
+/* Hide title page in home content */
+.home #main .entry-title {
+	display: none;
+}
+
+/* Reduce nav bar size */
+.main-navigation ul > li > a {
+    padding: 15px 37px 15px 38px;
+}
+.site-header .widget.widget_search input[type=search] {
+	height: 35px;
+}
+.widget.widget_search .search-submit {
+	height: 35px;
+}
+.site-branding {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.site-logo {
+    padding-left: 20px;
+	padding-right: 0px;
+}
+
+/* Align social icon to right*/
+#topbar-widget-wrapper .wrapper {
+	margin-right: 0px;
+}
+
+/* Align social media icon to center in footer */
+#social-medias > .wrapper > ul {
+	height: 102px;
+	text-align: center;
+}
+#social-medias ul li {
+	display: inline-block;
+	float: none;
+}
+
+/* Reduce news widget space occupation */
+#topbar-widget-wrapper {
+	position: absolute;
+	right: 0;
+}
+@media (max-width: 1024px) {
+	#topbar-widget-wrapper {
+		position: relative;
+		right: auto;
+	}
+}
+
+/* Reduce timeline font size (62px to 35px) */
+h2.cd-timeline-item-title { 
+   font-size: 35px;
+}
+
+/* Reduce title size and image */
+h1.page-title {
+	 font-size: 50px;
+}
+.page-detail {
+	 padding: 10px;
+}
+#header-featured-image.page-section {
+	 padding: 80px;
+}
+
+/* Increment background opacity in main slider */
+.main-slider-contents {
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* Increment navigation dot size in home slider */
+.slick-dots li button:before {
+	font-size: 12px;
+}
+
+/*************************************************
+ * 2 - Custom content CSS
+ * ************************************************/
+
+/* Adjust new search form padding */
+#site-navigation .widget_search {
+	padding: 10px;
+}
+@media (min-width: 1024px) and (max-width: 1200px) {
+	.site-header.has-site-logo .topbar-toggle .fa {
+		display: none;
+	}
+}
+
+/* Centering logo in Accademic Collaborations page */
+.page-id-1084 table.wp-block-table td:first-child {
+	text-align: center;
+}
+
+/* Override style for custom Academic Icon */
+.gs-team-social a.google-scholar:hover {
+    background: #E13D3A;
+    border: 1px solid #E13D3A;
+}
+
+/* Override style for custom Academic Icon */
+.gs-team-social a.dblp:hover {
+    background: #F9D720;
+    border: 1px solid #F9D720;
+}
+
+/*************************************************
+ * 3 - Home page footer
+ * ************************************************/
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+}
+.footer-logo img {
+    width: 100px;
+    height: 100px;
+}
+.footer-info {
+    text-align: center;
+    width: 40vw;
+}
+.footer-info p {
+    margin: 0 15px;
+
+}
+
+/* Portrait smartphones */
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+    }
+    .footer-logo, .footer-info {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .footer-logo img, .footer-p {
+        margin: 10px auto;
+    }
+}
+
+
+/*************************************************
+ * 4 - Plugin adjustment
+ * ************************************************/
+
+/* Remove animation for people shortcode */
+.cbp-so-init .cbp-so-side {
+    opacity: 1;
+}
+.cbp-so-init .cbp-so-side-left {
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+}
+.cbp-so-init .cbp-so-side-right {
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+}
+
+/* Adjust list of research topics spacing */
+.list-of-topics > li {
+	margin-bottom: 15px;
+}
