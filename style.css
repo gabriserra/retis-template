@@ -187,6 +187,11 @@ h1.page-title {
 	font-size: 12px;
 }
 
+/* Adjust service banner after adding anchor */
+#services .row .hentry:nth-child(1) .services-icon, #services .row .hentry:nth-child(4) .services-icon {
+    color: #404040;
+}
+
 /*************************************************
  * 2 - Custom content CSS
  * ************************************************/

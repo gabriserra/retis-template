@@ -152,9 +152,11 @@ if ( ! function_exists( 'retis_render_service_section' ) ) :
                         <div class="hentry">
                             <div class="services-wrapper">
                                 <?php if( ! empty( $content_detail['icon'] ) ) { ?>
-                                <div class="services-icon">
-                                    <i class="fa <?php echo esc_html( $content_detail['icon'] ); ?>"></i>
-                                </div><!-- .services-icon -->
+								<a href="<?php echo ! empty( $content_detail['url'] ) ? esc_url( $content_detail['url'] ) : '#'; ?>">
+									<div class="services-icon">
+										<i class="fa <?php echo esc_html( $content_detail['icon'] ); ?>"></i>
+									</div><!-- .services-icon -->
+								</a>
                                 <?php } ?>
                             </div><!-- .services-wrapper -->
                             <div class="services-content">
