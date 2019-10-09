@@ -43,6 +43,8 @@ function remove_parent_actions() {
 	remove_filter( 'elead_filter_courses_section_details', 'elead_get_courses_section_details' );
 	remove_action( 'elead_primary_content_action', 'elead_add_service_section', 30 );
 	remove_filter( 'elead_filter_courses_section_details', 'elead_get_service_section_details' );
+	remove_action( 'elead_primary_content_action', 'elead_add_about_section', 20 );
+	remove_filter( 'elead_filter_about_section_details', 'elead_get_about_section_details' );
 	
 	remove_action('add_meta_boxes', 'add_gs_team_metaboxes');
 }

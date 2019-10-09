@@ -100,7 +100,8 @@ $wp_customize->add_control( 'elead_theme_options[service_content_type]', array(
 	'active_callback'	=> 'elead_is_service_enable',
 	'choices'			=> array(
             'post'      => esc_html__( 'Post', 'elead' ),
-            'page'      => esc_html__( 'Page', 'elead' ),
+			'page'      => esc_html__( 'Page', 'elead' ),
+			'static'	=> esc_html__( 'Static', 'elead'),
         ),
 ) );
 
@@ -115,4 +116,37 @@ $wp_customize->add_control( 'elead_theme_options[service_content_post]', array(
 	'description'       => esc_html__( 'Simply hover post title on dashboard to see the Content ID. Max no. of posts allowed is 4. ie: 11, 24, 34', 'elead' ),
 	'section'           => 'elead_service',
 	'type'				=> 'text'
+) );
+
+// add control if you want to place static content (icons + caption)
+$wp_customize->add_setting( 'elead_theme_options[service_content_icons]', array(
+	'sanitize_callback' => 'retis_sanitize_cs_input',
+) );
+$wp_customize->add_setting( 'elead_theme_options[service_content_captions]', array(
+	'sanitize_callback' => 'retis_sanitize_cs_input',
+) );
+$wp_customize->add_setting( 'elead_theme_options[service_content_urls]', array(
+	'sanitize_callback' => 'retis_sanitize_cs_textarea',
+) );
+
+$wp_customize->add_control( 'elead_theme_options[service_content_icons]', array(
+	'active_callback'	=> 'elead_is_service_enable',
+	'label'             => esc_html__( 'Static: Icons FontAwesome ID', 'elead' ),
+	'description'       => esc_html__( 'Insert FontAwesome class ids. Use commas as separators', 'elead' ),
+	'section'           => 'elead_service',
+	'type'				=> 'text'
+) );
+$wp_customize->add_control( 'elead_theme_options[service_content_captions]', array(
+	'active_callback'	=> 'elead_is_service_enable',
+	'label'             => esc_html__( 'Static: Box captions', 'elead' ),
+	'description'       => esc_html__( 'Insert text caption for each box. Use commas as separators', 'elead' ),
+	'section'           => 'elead_service',
+	'type'				=> 'text'
+) );
+$wp_customize->add_control( 'elead_theme_options[service_content_urls]', array(
+	'active_callback'	=> 'elead_is_service_enable',
+	'label'             => esc_html__( 'Static: Box urls', 'elead' ),
+	'description'       => esc_html__( 'Insert urls for each box. Use commas as separators', 'elead' ),
+	'section'           => 'elead_service',
+	'type'				=> 'textarea'
 ) );

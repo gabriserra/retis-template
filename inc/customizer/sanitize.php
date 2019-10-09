@@ -7,6 +7,42 @@
  * @since Elead 0.1
  */
 
+if ( ! function_exists( 'retis_sanitize_cs_input' ) ) :
+	/**
+	* Sanitizes comma separated strings
+	* @param  $input entered value
+	* @return sanitized output
+	*
+	* @since Retis 0.1
+	*/
+	function retis_sanitize_cs_input( $input ) {
+
+		$values = explode( ',', $input );
+
+		// need something?
+
+		return $values;
+	}
+endif;
+
+if ( ! function_exists( 'retis_sanitize_cs_textarea' ) ) :
+	/**
+	* Sanitizes newline separated strings
+	* @param  $input entered value
+	* @return sanitized output
+	*
+	* @since Retis 0.1
+	*/
+	function retis_sanitize_cs_textarea( $input ) {
+
+		$values = explode( ',', $input );
+
+		// need something?
+
+		return $values;
+	}
+endif;
+
 if ( ! function_exists( 'elead_sanitize_select' ) ) :
 	/**
 	 * Sanitize select, radio.

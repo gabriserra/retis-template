@@ -45,7 +45,7 @@ function retis_customize_register( $wp_customize ) {
 	require get_stylesheet_directory() . '/inc/customizer/sections/slider.php';
 
 	// about
-	require get_template_directory() . '/inc/customizer/sections/about.php';
+	require get_stylesheet_directory() . '/inc/customizer/sections/about.php';
 	
 	// Service
 	require get_stylesheet_directory() . '/inc/customizer/sections/service.php';
