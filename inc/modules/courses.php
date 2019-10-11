@@ -203,7 +203,7 @@ if ( ! function_exists( 'retis_render_courses_section' ) ) :
                     </div><!-- .entry-content -->
                 </div><!-- .wrapper -->
                 <div class="page-decoration">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/uploads/decoration.png' ); ?>" alt="<?php esc_attr__( 'Decoration','elead' ); ?>">
+                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/uploads/decoration.png' ); ?>" alt="<?php esc_attr__( 'Decoration','elead' ); ?>">
                 </div><!-- .page-decoration -->
             </section><!-- #featured-courses -->
         <?php }

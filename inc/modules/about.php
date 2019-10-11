@@ -196,7 +196,7 @@ if ( ! function_exists( 'retis_render_about_section' ) ) :
                 </div><!-- .row -->
             </div><!-- .wrapper -->
             <div class="page-decoration">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/uploads/decoration.png' ); ?>" alt="<?php esc_attr__( 'Decoration','elead' ); ?>">
+                <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/uploads/decoration.png' ); ?>" alt="<?php esc_attr__( 'Decoration','elead' ); ?>">
             </div>
         </section><!-- #hero-section -->
         <?php endforeach;
@@ -251,7 +251,7 @@ if ( ! function_exists( 'retis_render_customized_about_section' ) ) :
                                                         echo '<span>' . esc_html( $content_detail['subtitle'] ) . '</span>';
                                                     } 
                                                     if ( ! empty( $content_detail['title'] ) ) { ?>
-                                                        <h2 class="page-title"><?php echo esc_html( $content_detail['title'] ); ?></h2>
+                                                        <a href="<?php echo esc_html( $content_detail['url'] )?>"><h2 class="page-title"><?php echo esc_html( $content_detail['title'] ); ?></h2></a>
                                                     <?php } ?>
                                                 </div><!-- .slider-content -->
                                             </div><!-- .wrapper -->
@@ -275,7 +275,7 @@ if ( ! function_exists( 'retis_render_customized_about_section' ) ) :
                 </div><!-- .row -->
             </div><!-- .wrapper -->
             <div class="page-decoration">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/uploads/decoration.png' ); ?>" alt="<?php esc_attr__( 'Decoration','elead' ); ?>">
+                <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/uploads/decoration.png' ); ?>" alt="<?php esc_attr__( 'Decoration','elead' ); ?>">
             </div>
         </section><!-- #hero-section -->
         <?php

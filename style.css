@@ -133,6 +133,11 @@ h2.news-ticker-label {
     padding-left: 20px;
 	padding-right: 0px;
 }
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+	.site-header .widget.widget_search {
+		max-width: 200px;
+	}
+}
 
 /* Align social icon to right*/
 #topbar-widget-wrapper .wrapper {
@@ -190,6 +195,23 @@ h1.page-title {
 /* Adjust service banner after adding anchor */
 #services .row .hentry:nth-child(1) .services-icon, #services .row .hentry:nth-child(4) .services-icon {
     color: #404040;
+}
+
+/* Reduce space between about-title and navbar */
+@media screen and (min-width: 992px) {
+	#about .hentry.about-header {
+		margin-top: 1em;
+	}
+}
+
+/* Reduce padding of homepage sections */
+.home .page-section {
+    padding: 35px 0;
+}
+
+/* Remove after element in ul for Post Carousel */
+.recentpost-categories li::after {
+	content: none !important;
 }
 
 /*************************************************
@@ -297,7 +319,6 @@ h1.page-title {
 @media screen and (max-width: 992px) {
 	.static-services .services-wrapper {
 		line-height: 2;
-		
 	}
 }
 
@@ -308,6 +329,11 @@ h1.page-title {
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
+}
+@media screen and (max-width: 500px) {
+	.retis-about .slick-item {
+		background-size: cover;
+	}
 }
 .retis-about .slick-item .wrapper {
 	position: absolute !important;
@@ -324,13 +350,6 @@ h1.page-title {
 .retis-about .slick-current h2 {
 	color: white;
 	font-size: 30px;
-}
-.retis-about > .wrapper {
-	padding: 35px 0;
-}
-
-body {
-	overflow: hidden;
 }
 
 /*************************************************
@@ -419,4 +438,22 @@ body {
 /* Adjust list of research topics spacing */
 .list-of-topics > li {
 	margin-bottom: 15px;
+}
+
+/* Adjust Table press tables */
+.tablepress thead, .tablepress tbody {
+	display: inline-block;
+	width: 100%;
+}
+.tablepress tr {
+	display: flex;
+}
+.tablepress td, .tablepress th {
+	flex: 1;
+}
+
+/* Adjust icon in people shortcode */
+ul.gs-team-social {
+	padding-left: 0px;
+	padding-right: 0px;
 }

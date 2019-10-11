@@ -81,16 +81,31 @@ function retis_gs_team_shortcode( $atts ) {
         ), $atts
     ));
 
-    $GLOBALS['gs_team_loop'] = new WP_Query(
-        array(
-        'post_type'			=> 'gs_team',
-        'order'				=> $order,
-        'orderby'			=> $orderby,
-        'posts_per_page'	=> $num,
-        'team_group'		=> $group,
-        'paged'             => $gs_tm_paged,
-        'meta_key' 			=> '_gs_termination_year'
-    ));
+	if ( $orderby == 'meta_value' )
+	{
+		$GLOBALS['gs_team_loop'] = new WP_Query(
+			array(
+			'post_type'			=> 'gs_team',
+			'order'				=> $order,
+			'orderby'			=> $orderby,
+			'posts_per_page'	=> $num,
+			'team_group'		=> $group,
+			'paged'             => $gs_tm_paged,
+			'meta_key' 			=> '_gs_termination_year'
+    	));
+	}
+	else
+	{
+		$GLOBALS['gs_team_loop'] = new WP_Query(
+			array(
+			'post_type'			=> 'gs_team',
+			'order'				=> $order,
+			'orderby'			=> $orderby,
+			'posts_per_page'	=> $num,
+			'team_group'		=> $group,
+			'paged'             => $gs_tm_paged
+    	));
+	}
     
     $output = '';
     $output = '<div  class="wrap gs_team_area '.$theme.'">';
