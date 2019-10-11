@@ -21,7 +21,7 @@ $portfolio_post_id = url_to_postid( $args['url'] );
 if ($portfolio_post_id == 0)
 	$custom_retis_url = $args['url'];
 else
-	$custom_retis_url = get_post_meta( $portfolio_post_id, "_retis_url_box", true);
+	$custom_retis_url = get_post_meta( $portfolio_post_id, "_portfolio_url_box", true);
 
 $show_meta = $opts['show_icon'] && $opts['icon'] ||
     $opts['show_title'] && $args['title'] ||

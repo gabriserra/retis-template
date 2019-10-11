@@ -110,9 +110,9 @@ h2.news-ticker-label {
  * 1 - Parent template adjustment
  * ************************************************/
 
-/* Hide title page in home content */
+/* Center title page in home content */
 .home #main .entry-title {
-	display: none;
+	text-align: center;
 }
 
 /* Reduce nav bar size */
@@ -325,11 +325,19 @@ h1.page-title {
 	color: white;
 	font-size: 30px;
 }
+.retis-about > .wrapper {
+	padding: 35px 0;
+}
+
+body {
+	overflow: hidden;
+}
 
 /*************************************************
  * 3 - Home page footer
  * ************************************************/
 
+/* No more used, needed for SSSUP and TECIP old contacts */
 .footer-container {
     display: flex;
     justify-content: center;
@@ -347,7 +355,7 @@ h1.page-title {
 
 }
 
-/* Portrait smartphones */
+/* No more used, needed for SSSUP and TECIP old contacts */
 @media (max-width: 900px) {
     .footer-container {
         flex-direction: column;
@@ -360,6 +368,32 @@ h1.page-title {
     .footer-logo img, .footer-p {
         margin: 10px auto;
     }
+}
+
+/* Remove comment RSS and Wordpress.org from meta */
+.widget_meta > ul > li:nth-last-child(1) {
+	display: none; 
+}
+
+.widget_meta > ul > li:nth-last-child(2) {
+	display: none; 
+}
+
+.footer-contacts-container {
+	display: flex;
+	align-items: center;
+}
+
+.footer-contacts-logo {
+	margin-right: 15px;
+}
+
+.footer-contacts-logo img {
+    width: 100px;
+}
+
+.footer-contacts-p > p {
+	font-size: 15px;
 }
 
 
