@@ -295,7 +295,7 @@ h1.page-title {
     line-height: 125px;
 	width: 100%;
 	background-color: #fff !important;
-	color: #404040 !important;
+	color: var(--primarydarker) !important;
 	border-radius: 5px;
 	border: 1px solid #ddd;
 }
@@ -320,6 +320,9 @@ h1.page-title {
 	.static-services .services-wrapper {
 		line-height: 2;
 	}
+}
+.static-services .featured-title {
+	color: var(--transparent);
 }
 
 /* Add style to adjust About section in Home */
@@ -350,6 +353,16 @@ h1.page-title {
 .retis-about .slick-current h2 {
 	color: white;
 	font-size: 30px;
+}
+
+/* Adjust team caption in People page and page titles */ 
+@media screen and (max-width: 500px) {
+	#post-159 h3, #post-726 h3, #post-1948 h3 {
+		font-size: 20px;
+	}
+	.page-title {
+		font-size: 25px !important;
+	}
 }
 
 /*************************************************
@@ -441,15 +454,24 @@ h1.page-title {
 }
 
 /* Adjust Table press tables */
-.tablepress thead, .tablepress tbody {
-	display: inline-block;
-	width: 100%;
-}
-.tablepress tr {
-	display: flex;
-}
-.tablepress td, .tablepress th {
-	flex: 1;
+@media (min-width: 1024px) {
+	.tablepress thead, .tablepress tbody {
+		display: inline-block;
+		width: 100%;
+	}
+	.tablepress tr {
+		display: flex;
+	}
+	.tablepress td, .tablepress th {
+		flex: 1;
+	}
+	
+	/* Adjust Table press tables for Thesis */
+	.page-id-1248 .tablepress tr .column-1,
+	.page-id-1248 .tablepress tr .column-2,
+	.page-id-1248 .tablepress tr .column-4 {
+		flex-grow: 2 !important;
+	}
 }
 
 /* Adjust icon in people shortcode */
@@ -457,3 +479,4 @@ ul.gs-team-social {
 	padding-left: 0px;
 	padding-right: 0px;
 }
+
