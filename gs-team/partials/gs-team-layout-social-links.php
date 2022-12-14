@@ -9,11 +9,7 @@
  * @version 1.0.0
  */
 
-$member_id = get_the_id();
-
-$social_links = get_post_meta( $member_id, 'gs_social', true );
-
-$social_links = apply_filters( 'gs_team_member_social_links', $social_links, $member_id );
+$social_links = gs_team_get_social_links( get_the_id() );
 
 if ( 'on' == $gs_member_connect && !empty($social_links) ): ?>
 
@@ -31,24 +27,11 @@ if ( 'on' == $gs_member_connect && !empty($social_links) ): ?>
             }
         } else {
             $link = !empty($social['link']) ? $social['link'] : '#';
+            $link = esc_url($link);
         } ?>
 
         <li>
-            <?php
-                if ( $social['icon']=='envelope' ) {
-                    printf(
-                        '<a class ="%s" href="%s" itemprop="sameAs"><i class="fa fa-%s"></i></a>',
-                        esc_html($social['icon']), $link, esc_html($social['icon'])
-                    );
-                }
-                else 
-                {
-                    printf(
-                        '<a class ="%s" href="%s" target="_blank" itemprop="sameAs"><i class="fa fa-%s"></i></a>',
-                        esc_html($social['icon']), esc_url($link), esc_html($social['icon'])
-                    );
-                } 
-            ?>
+            <?php printf( '<a class="%1$s" href="%2$s" target="_blank" itemprop="sameAs"><i class="fa fa-%1$s"></i></a>', esc_attr($social['icon']), $link ); ?>
         </li>
 
     <?php endforeach; ?>
