@@ -31,7 +31,12 @@ if ( 'on' == $gs_member_connect && !empty($social_links) ): ?>
         } ?>
 
         <li>
-            <?php printf( '<a class="%1$s" href="%2$s" target="_blank" itemprop="sameAs"><i class="fa fa-%1$s"></i></a>', esc_attr($social['icon']), $link ); ?>
+            <?php
+            if ( $social['icon']=='envelope' ) 
+                printf( '<a class="%1$s" onclick="%2$s" target="_blank" itemprop="sameAs"><i class="fa fa-%1$s"></i></a>', esc_attr($social['icon']), $link );
+            else
+                printf( '<a class="%1$s" href="%2$s" target="_blank" itemprop="sameAs"><i class="fa fa-%1$s"></i></a>', esc_attr($social['icon']), $link );
+            ?>
         </li>
 
     <?php endforeach; ?>

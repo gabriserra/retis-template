@@ -487,3 +487,8 @@ ul.gs-team-social {
 .vp-portfolio__item-meta-category {
 	margin-left: auto !important;
 }
+
+/* Adjust image position in GS Team squares on People page */
+.single-member-div .single-member .gs_team_image__wrapper img {
+	object-position: center 10%;	
+}
