@@ -490,5 +490,5 @@ ul.gs-team-social {
 
 /* Adjust image position in GS Team squares on People page */
 .single-member-div .single-member .gs_team_image__wrapper img {
-	object-position: center 10%;	
+	object-position: center 10% !important;
 }
