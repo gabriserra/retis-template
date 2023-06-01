@@ -2,7 +2,7 @@
 Theme Name: ReTiS WP Template
 Author: Gabriele Serra
 Description: A simple child theme for Elead
-Version: 0.2.2
+Version: 0.3.0
 Template: elead
 Text Domain: retis-template
 */ 
@@ -488,7 +488,20 @@ ul.gs-team-social {
 	margin-left: auto !important;
 }
 
-/* Adjust image position in GS Team squares on People page */
-.single-member-div .single-member .gs_team_image__wrapper img {
-	object-position: center 10% !important;
+/* Publication on Single people pages */
+.gs-team-single-content > .gs_member_details {
+	display: block;
+}
+.gs_member_personal {
+	display: flex;
+	width: 100%;
+}
+.gs_member_publications {
+	width: 100%;
+}
+.gs-team-single-content .tab-filter {
+	display: none;
+}
+.single-gs_team .gs_member_details {
+	padding-left: 25px !important;
 }
