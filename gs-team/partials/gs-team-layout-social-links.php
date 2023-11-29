@@ -9,7 +9,7 @@
  * @version 1.0.0
  */
 
-$social_links = gs_team_get_social_links( get_the_id() );
+$social_links = GSTEAM\get_social_links( get_the_id() );
 
 if ( 'on' == $gs_member_connect && !empty($social_links) ): ?>
 
