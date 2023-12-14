@@ -4,18 +4,12 @@
 // REMOVE / RE-ADD PLUGIN ACTIONS
 // **********************************
 
-function retis_remove_gs_team_actions()
-{
-    remove_action( 'add_meta_boxes', 'add_gs_team_metaboxes' );
-}
-
 function retis_add_gs_team_actions()
 {
     add_action( 'add_meta_boxes', 'add_retis_gs_team_metaboxes' );
     add_action( 'save_post', 'save_retis_gs_team_postdata' );
 }
 
-retis_remove_gs_team_actions();
 retis_add_gs_team_actions();
 
 // **********************************
@@ -24,10 +18,9 @@ retis_add_gs_team_actions();
 
 function add_retis_gs_team_metaboxes()
 {
-    add_meta_box('gsTeamSection', 'Member\'s Additioinal Info' ,'gs_team_cmb_cb', 'gs_team', 'normal', 'high');
+    remove_meta_box('gsTeamSectionSocial', 'gs_team', 'normal');
     add_meta_box('gsTeamSectionSocial', 'Member\'s Social Links' ,'retis_gs_team_cmb_social_cb', 'gs_team', 'normal', 'high');
-    add_meta_box('gsTeamSectionSkill', 'Member\'s Skills' ,'gs_team_cmb_skill_cb', 'gs_team', 'normal', 'high');
-	add_meta_box('gsTeamYear', 'Member\'s termination date', 'retis_gs_team_cmb_year', 'gs_team', 'normal', 'high');
+    add_meta_box('gsTeamYear', 'Member\'s termination date', 'retis_gs_team_cmb_year', 'gs_team', 'normal', 'high');
 }
 
 function save_retis_gs_team_postdata( $post_id )
@@ -109,7 +102,7 @@ function retis_gs_team_cmb_social_cb( $post ) {
                             <tr>
                                 <td><i class="fa fa-arrows" aria-hidden="true"></i></td>
                                 <td>
-                                    <?php gs_team_select_builder('gstm-team-icon[]', $social_icons, $field['icon'], __('Select icon', 'gsteam'), 'widefat gstm-icon-select'); ?>
+                                    <?php GSTEAM\select_builder('gstm-team-icon[]', $social_icons, $field['icon'], __('Select icon', 'gsteam'), 'widefat gstm-icon-select'); ?>
                                 </td>
                                 <td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gsteam'); ?>" class="widefat" name="gstm-team-link[]" value="<?php if(isset($field['link'])) echo esc_attr( $field['link'] ); ?>"/></td>
                                 <td><a class="button remove-row" href="#"><?php _e('Remove', 'gsteam'); ?></a></td>
@@ -120,7 +113,7 @@ function retis_gs_team_cmb_social_cb( $post ) {
                             <tr>
                                 <td><i class="fa fa-arrows" aria-hidden="true"></i></td>
                                 <td>
-                                    <?php gs_team_select_builder('gstm-team-icon[]', $social_icons, '', __('Select icon', 'gsteam'), 'widefat gstm-icon-select'); ?>
+                                    <?php GSTEAM\select_builder('gstm-team-icon[]', $social_icons, '', __('Select icon', 'gsteam'), 'widefat gstm-icon-select'); ?>
                                 </td>
                                 <td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gsteam'); ?>" class="widefat" name="gstm-team-link[]" value=""/></td>
                                 <td><a class="button remove-row" href="#"><?php _e('Remove', 'gsteam'); ?></a></td>
@@ -131,7 +124,7 @@ function retis_gs_team_cmb_social_cb( $post ) {
                         <tr class="empty-row screen-reader-text">
                             <td><i class="fa fa-arrows" aria-hidden="true"></i></td>
                             <td>
-                                <?php gs_team_select_builder('gstm-team-icon[]', $social_icons, '', __('Select icon', 'gsteam'), 'widefat'); ?>
+                                <?php GSTEAM\select_builder('gstm-team-icon[]', $social_icons, '', __('Select icon', 'gsteam'), 'widefat'); ?>
                             </td>
                             <td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gsteam'); ?>" class="widefat" name="gstm-team-link[]" value=""/></td>
                             <td><a class="button remove-row" href="#"><?php _e('Remove', 'gsteam'); ?></a></td>
