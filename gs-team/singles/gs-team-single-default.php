@@ -22,16 +22,16 @@ $designation = get_post_meta( get_the_id(), '_gs_des', true );
             <div class="gs_ribon_wrapper">
                 
                 <!-- Team Image -->
-                <?php gs_team_member_thumbnail( 'full', true ); ?>
+                <?php GSTEAM\member_thumbnail( 'full', true ); ?>
                 <?php do_action( 'gs_team_after_member_thumbnail' ); ?>
 
                 <!-- Ribbon -->
-                <?php include GS_Team_Template_Loader::locate_template( 'partials/gs-team-layout-ribon.php' ); ?>
+                <?php include GSTEAM\Template_Loader::locate_template( 'partials/gs-team-layout-ribon.php' ); ?>
                 
             </div>
 
             <!-- Meta Details -->
-            <?php include GS_Team_Template_Loader::locate_template( 'partials/gs-team-layout-meta-details.php' ); ?>
+            <?php include GSTEAM\Template_Loader::locate_template( 'partials/gs-team-layout-meta-details.php' ); ?>
 
         </div>
 
@@ -47,14 +47,14 @@ $designation = get_post_meta( get_the_id(), '_gs_des', true );
 
                 <!-- Social Links -->
                 <?php $gs_member_connect = 'on'; ?>
-                <?php include GS_Team_Template_Loader::locate_template( 'partials/gs-team-layout-social-links.php' ); ?>
+                <?php include GSTEAM\Template_Loader::locate_template( 'partials/gs-team-layout-social-links.php' ); ?>
 
                 <!-- Description -->
                 <div class="gs-member-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
                 <?php do_action( 'gs_team_after_member_details' ); ?>
                 
                 <!-- Skills -->
-                <?php include GS_Team_Template_Loader::locate_template( 'partials/gs-team-layout-skills.php' ); ?>
+                <?php include GSTEAM\Template_Loader::locate_template( 'partials/gs-team-layout-skills.php' ); ?>
 
         </div>
     </div>
